@@ -1,0 +1,42 @@
+body {
+    background-color: #FFEBC4;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#hero-image {
+    box-shadow: 10px 10px 5px grey;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+}
+
+.hero-text {
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 80px;
+    margin-left: 80px;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+}
+h3 {
+    text-decoration: underline;
+}
+.font{
+    font-family: 'Fondamento', cursive;
+    font-color: #000000;
+}
+.menu {
+font-family: 'Acme', sans-serif;
+}
+.avatar {
+    border-radius: 50%;
+}
