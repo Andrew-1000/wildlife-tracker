@@ -1,0 +1,51 @@
+{{#partial "content"}}
+    <div class="container">
+        <h2>ADD A NEW SIGHTING</h2>
+        <form action="/sightings" method="post" class="col-md-6">
+
+            <div class="form-group">
+                <label for="sighting_id">Sighting</label>
+                <input type="text" class="form-control" id="sighting_id" name="sighting_id" >
+
+            </div>
+            <div>
+                <label for="location">Location</label>
+                <select type="text" class="form-control" name="location">
+                    <option label="Select Location"></option>
+                    <option value="Mara-Reserve">Mara-Reserve</option>
+                    <option value="Forest-Area">Forest-Area</option>
+                    <option value="Swamp-Area">Swamp-Area</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="animal_id">Animal</label>
+                <select id="animal_id" class="form-control" name="animal_id">
+                    <option label="Select animal"></option>
+                    <option value="1">Elephant</option>
+                    <option value="2">Lion</option>
+                    <option value="3">Mongoose</option>
+                    <option value="4">Tortoise</option>
+                    <option value="5">Chimpanzee</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ranger_id">Ranger</label>
+                <select id="ranger_id" class="form-control" name="ranger_id">
+                    <option label="Select ranger"></option>
+                    <option value="1">Ole Nkulal</option>
+                    <option value="2">Kimani</option>
+                    <option value="3">Sankuri</option>
+                    <option value="4">Liboi</option>
+                    <option value="5">Gilbert</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">CREATE NEW SIGHTING</button>
+
+        </form>
+    </div>
+{{/partial}}
+
+main

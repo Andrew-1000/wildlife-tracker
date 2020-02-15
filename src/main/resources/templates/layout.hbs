@@ -1,0 +1,47 @@
+{{#block "header"}}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{#block "title"}} Wildlife Tracker{{/block}}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Fondamento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <a class="navbar-brand font" href="/"> Wildlife Tracker</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link menu" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu" href="/rangers">Rangers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu " href="/animals" >Animals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu" href="/sightings">Sightings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu" href="/" >Track Animal</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="content">
+    {{#block "content"}}
+    {{/block}}
+
+</div>
+</body>
+</html>
+{{/block}}
+

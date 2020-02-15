@@ -1,0 +1,47 @@
+{{#partial "content"}}
+    <div class="container">
+        <h2>ADD NEW ANIMAL</h2>
+        <div class="row">
+            <form action="/animals" method="post" class="col-md-6">
+            <div class="form-group">
+                <label for="animal_id">Animal</label>
+                <input id="animal_id" class="form-control" type="text"  name="animal_id" >
+            </div>
+                <div class=" form-group">
+                    <label for="animal_name">Animal Name</label>
+                    <input id="animal_name" class="form-control" type="text" name="animal_name">
+                </div>
+                <div class="form-group">
+                    <label for="health">Health</label>
+                    <select id="health" class="form-control" name="health">
+                        <option label="Choose State of Health"></option>
+                        <option value="Healthy">Healthy</option>
+                        <option value="Ill">Ill</option>
+                        <option value="Okay">Okay</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <select id="age" class="form-control" name="age">
+                        <option label="Choose Age"></option>
+                        <option value="NewBorn">New Born</option>
+                        <option value="Young">Young</option>
+                        <option value="Old">Old</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="endangered"></label>
+                    <select id="endangered" class="form-control" name="endangered">
+                        <option label="Is this animal endangered?"></option>
+                        <option value="True">True</option>
+                        <option value="False">False</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">ADD ANIMAL</button>
+
+            </form>
+        </div>
+    </div>
+{{/partial}}
+
+{{> layout.hbs}}
