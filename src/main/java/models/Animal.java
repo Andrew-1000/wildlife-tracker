@@ -5,11 +5,11 @@ public class Animal {
    private int animal_id;
     private String animal_name;
     private String health;
-    private int age;
-    private boolean endangered;
+    private String age;
+    private String endangered;
 
 
-    public Animal(int animal_id, String animal_name, String health, int age, boolean endangered) {
+    public Animal(int animal_id, String animal_name, String health, String age, String endangered) {
         this.animal_id = animal_id;
         this.animal_name = animal_name;
         this.health = health;
@@ -17,9 +17,6 @@ public class Animal {
         this.endangered = endangered;
 
     }
-
-
-
     public String getAnimal_name() {
         return animal_name;
     }
@@ -32,11 +29,11 @@ public class Animal {
         return health;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public boolean isEndangered() {
+    public String isEndangered() {
         return endangered;
     }
 
@@ -52,11 +49,11 @@ public class Animal {
         this.health = health;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
-    public void setEndangered(boolean endangered) {
+    public void setEndangered(String endangered) {
         this.endangered = endangered;
     }
 }
