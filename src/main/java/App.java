@@ -20,7 +20,8 @@ public class App {
     public static void main(String[] args) {
         Map<String, Object> model = new HashMap<>();
         staticFileLocation("/public");
-        staticFileLocation("/static");
+
+        HandlebarsTemplateEngine handlebarsTemplateEngine = new HandlebarsTemplateEngine();
 
         String connection = "jdbc:h2:~/wildlife_track.db;INIT=RUNSCRIPT from 'classpath:database/wildlifetrack.sql'";
         Sql2o sql2o = new Sql2o(connection, "postgres", "admin");
@@ -31,40 +32,22 @@ public class App {
         get("/", (request, response) -> {
             return new ModelAndView(model, "index.hbs");
 
-        }, new HandlebarsTemplateEngine());
+        }, handlebarsTemplateEngine);
 
 
         get("/rangers", (request, response) -> {
             return new ModelAndView(model, "add-ranger.hbs");
-        }, new HandlebarsTemplateEngine());
+        }, handlebarsTemplateEngine);
 
 
         get("/animals", (request, response) -> {
             return new ModelAndView(model, "add-animal.hbs");
-        }, new HandlebarsTemplateEngine());
+        }, handlebarsTemplateEngine);
 
 
         get("/sightings", (request, response) -> {
             return new ModelAndView(model, "add-sighting.hbs");
-        }, new HandlebarsTemplateEngine());
-
-        get("animals/new", (request, response) -> {
-           List<Animal> animal = sql2oAnimal.getAll();
-           model.put("animal", animal);
-           return new ModelAndView(model, "add-animal.hbs");
-        }, new HandlebarsTemplateEngine());
-
-        get("ranger/new", (request, response) -> {
-            List<Ranger> ranger = sql2oRanger.getAll();
-            model.put("ranger", ranger);
-            return new ModelAndView(model, "add-ranger.hbs");
-        }, new HandlebarsTemplateEngine());
-
-        get("sightings/new", (request, response) -> {
-            List<Sighting> sightings = sql2oSighting.getAll();
-            model.put("sightings", sightings);
-            return new ModelAndView(model, "add-sighting.hbs");
-        }, new HandlebarsTemplateEngine());
+        }, handlebarsTemplateEngine);
 
 
         post("/rangers", (request, response) -> {
@@ -75,23 +58,20 @@ public class App {
             sql2oRanger.add(ranger_id, ranger_name);
             response.redirect("/rangers");
             return null;
-        }, new HandlebarsTemplateEngine());
+        }, handlebarsTemplateEngine);
 
         post("/animals", (request, response) -> {
             int animal_id = Integer.parseInt(request.queryParams("animal_id"));
-            String animal_name = (sql2oAnimal.findById(animal_id)).getAnimal_name();
+            String animal_name = request.queryParams("animal_name");
             String health = request.queryParams("health");
             String age = request.queryParams("age");
             String endangered = request.queryParams("endangered");
             System.out.println(animal_id);
             System.out.println(request.queryParams("animal_id"));
-
             sql2oAnimal.add(animal_id, animal_name, health, age, endangered);
-
-            response.redirect("/sightings");
+            response.redirect("/animals");
             return null;
-
-        }, new HandlebarsTemplateEngine());
+        }, handlebarsTemplateEngine);
 
 
         post("/sightings", (request, response) -> {
@@ -104,9 +84,7 @@ public class App {
             sql2oSighting.add(sighting_id, location, animal_id, ranger_id);
             response.redirect("/sightings");
             return null;
-        }, new HandlebarsTemplateEngine());
-
-
+        }, handlebarsTemplateEngine);
 
     }
 }

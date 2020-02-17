@@ -17,7 +17,7 @@ public class Sql2oSighting implements SightingDao {
     @Override
     public List<Sighting> getAll() {
         String sql = "SELECT * FROM sightings";
-        try(Connection connection = Database.sql2o.open()) {
+        try(Connection connection = sql2o.open()) {
             return connection.createQuery(sql)
                     .executeAndFetch(Sighting.class);
         }
@@ -25,13 +25,11 @@ public class Sql2oSighting implements SightingDao {
 
     @Override
     public Sighting find(int sighting_id) {
-
-        try(Connection connection = Database.sql2o.open()) {
+        try(Connection connection = sql2o.open()) {
             String sql = "SELECT * FROM sightings WHERE sighting_id = :sighting_id";
             Sighting sighting = connection.createQuery(sql)
                     .addParameter("sighting_id", sighting_id)
                     .executeAndFetchFirst(Sighting.class);
-
             return sighting;
         }
 
@@ -41,7 +39,7 @@ public class Sql2oSighting implements SightingDao {
     @Override
     public void add(int sighting_id, String location, int animal_id, int ranger_id) {
         String sql = "INSERT INTO sightings (sighting_id,location, ranger_id, animal_id) VALUES (:sighting_id,:location, :ranger_id, :animal_id)";
-        try(Connection con = Database.sql2o.open()) {
+        try(Connection con = sql2o.open()) {
             con.createQuery(sql)
                     .addParameter("sighting_id", sighting_id)
                     .addParameter("location", location)
