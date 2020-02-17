@@ -26,38 +26,5 @@ public class AnimalTest {
         assertEquals("elephant", testAnimal.getAnimal_name());
     }
 
-//    @Test
-//    public void save_insertObjectsIntoDatabase_Animal() {
-//        sql2oAnimal.add(1, "elephant", "healthy", "young", "true");
-//        assertTrue(sql2oAnimal.getAll().get(0).equals(sql2oAnimal));
-//    }
 
-//    @Test
-//    public void all_returnsAllInstancesOfAnimals_true() {
-//        Sql2oAnimal firstAnimal = new Animal(1, "elephant", "healthy", 17, true);
-//        firstAnimal.add();
-//        Animal secondAnimal = new Animal(2, "lion", "ill", 4, false);
-//        secondAnimal.add();
-//        Animal thirdAnimal = new Animal(3, "girraffe", "healthy", 6, true);
-//        thirdAnimal.add();
-//        assertEquals(true, firstAnimal.getAll().get(0).equals(firstAnimal));
-//        assertEquals(true, Animal.getAll().get(1).equals(secondAnimal));
-//        assertEquals(true, Animal.getAll().get(2).equals(thirdAnimal));
-//    }
-//
-//    @Test
-//    public void save_assignsIdToObject() {
-//        testAnimal.add();
-//        Animal savedAnimal = getAll().get(0);
-//        assertEquals(testAnimal.getAnimal_id(), savedAnimal.getAnimal_id());
-//    }
-//
-//    @Test
-//    public void find_returnsAnimalWithSameId_secondAnimal(){
-//        Animal firstAnimal = new Animal(1, "elephant", "healthy", 17, true);
-//        firstAnimal.add();
-//        Animal secondAnimal = new Animal(2, "elephant", "healthy", 17, true);
-//        secondAnimal.add();
-//        assertEquals(Animal.findById(secondAnimal.getAnimal_id()), secondAnimal);
-//    }
 }

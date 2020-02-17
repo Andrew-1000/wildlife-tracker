@@ -49,39 +49,5 @@ public class SightingTest {
 
 
 
-//    @Test
-//    public void save_returnsTrueIfDescriptionsAretheSame() {
-//        testSighting.add();
-//        assertTrue(Sighting.all().get(0).equals(testSighting));
-//    }
-//
-//    @Test
-//    public void save_assignsIdToSighting(){
-//        testSighting.save();
-//        Sighting savedSighting = new Sighting(1, "Masai spring", 1, 1);
-//        assertEquals(savedSighting.getSighting_id(), testSighting.getSighting_id());
-//    }
-
-//    @Test
-//    public void all_returnsAllInstancesOfSighting_true(){
-//        firstSighting.save();
-//        secondSighting.save();
-//        assertEquals(true, Sighting.all().get(0).equals(firstSighting));
-//        assertEquals(true, Sighting.all().get(0).equals(secondSighting));
-//    }
-//    @Test
-//    public void find_returnsSightingWithSameId_secondSighting(){
-//        firstSighting.save();
-//        secondSighting.save();
-//        assertEquals(Sighting.find(secondSighting.getSighting_id()), secondSighting);
-//    }
-
-//    @Test
-//    public  void save_recordsTimeOfSightingInDatabase(){
-//        testSighting.save();
-//        Timestamp saveSightingDate = Sighting.find(testSighting.getSighting_id()).getLastseen();
-//        Timestamp rightnow = new Timestamp(new Date().getTime());
-//        assertEquals(rightnow.getDay(), saveSightingDate.getDay());
-//    }
 
 }
