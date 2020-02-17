@@ -1,19 +1,19 @@
 {{#partial "content"}}
     <div class="container">
         <h2>ADD NEW ANIMAL</h2>
-        <div class="row">
+
             <form action="/animals" method="post" class="col-md-6">
             <div class="form-group">
                 <label for="animal_id">Animal</label>
-                <input id="animal_id" class="form-control" type="text"  name="animal_id" >
+                <input class="form-control" type="text" id="animal_id" name="animal_id" >
             </div>
                 <div class=" form-group">
                     <label for="animal_name">Animal Name</label>
-                    <input id="animal_name" class="form-control" type="text" name="animal_name">
+                    <input  class="form-control" type="text" id="animal_name" name="animal_name">
                 </div>
                 <div class="form-group">
                     <label for="health">Health</label>
-                    <select id="health" class="form-control" name="health">
+                    <select  class="form-control" id="health" name="health">
                         <option label="Choose State of Health"></option>
                         <option value="Healthy">Healthy</option>
                         <option value="Ill">Ill</option>
@@ -30,18 +30,21 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="endangered"></label>
+                    <label for="endangered">Is Animal Endangered?</label>
                     <select id="endangered" class="form-control" name="endangered">
                         <option label="Is this animal endangered?"></option>
-                        <option value="True">True</option>
-                        <option value="False">False</option>
+                        <option value="True">Yes</option>
+                        <option value="False">No</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">ADD ANIMAL</button>
+                <div align="center" style="padding-top: 10px; padding-bottom: 30px">
+                    <button type="submit" class="btn btn-primary">ADD ANIMAL</button>
+                </div>
+
 
             </form>
         </div>
-    </div>
+
 {{/partial}}
 
 {{> layout.hbs}}
