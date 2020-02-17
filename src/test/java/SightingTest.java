@@ -10,20 +10,22 @@ import java.util.Date;
 import java.sql.Timestamp;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 public class SightingTest {
     Sighting testSighting = new Sighting(1, "Longeliani", 1, 1);
     Sighting anotherSighting = new Sighting(1, "Longeliani", 1, 1);
     Sighting firstSighting = new Sighting(1, "Longeliani", 1, 1);
     Ranger testRanger = new Ranger(1, "OleNkulal" );
     Sighting secondSighting = new Sighting(2, "Longido", 3, 2);
-    Animal testAnimal = new Animal(1, "elephant", "healthy", 17, true);
+    Animal testAnimal = new Animal(1, "elephant", "healthy", "17", "true");
 
 
     @Rule
     public DatabaseRule databaseRule = new DatabaseRule();
 
+    @Test
+    public void Sighting_instantiatesWithSightingId_true(){
+        assertEquals(1, testSighting.getSighting_id());
+    }
     @Test
     public void sighting_instantiatesCorrectly_true(){
         assertEquals(true, testSighting instanceof Sighting);
@@ -44,14 +46,12 @@ public class SightingTest {
         assertEquals(1, testSighting.getAnimal_id());
     }
 
-    @Test
-    public void equals_returnsTrueIfLocationAndAnimalIdAreSame_true(){
-        assertTrue(testSighting.equals(anotherSighting));
-    }
+
+
 
 //    @Test
 //    public void save_returnsTrueIfDescriptionsAretheSame() {
-//        testSighting.save();
+//        testSighting.add();
 //        assertTrue(Sighting.all().get(0).equals(testSighting));
 //    }
 //
@@ -74,14 +74,6 @@ public class SightingTest {
 //        firstSighting.save();
 //        secondSighting.save();
 //        assertEquals(Sighting.find(secondSighting.getSighting_id()), secondSighting);
-//    }
-
-//    @Test
-//    public void save_savesAnimalIdintoDB_true(){
-//      testRanger.add();
-//      testSighting.save();
-//      Sighting savedSighting = Sighting.find(testSighting.getSighting_id());
-//      assertEquals(savedSighting.getAnimal_id(), testRanger.getRanger_id());
 //    }
 
 //    @Test

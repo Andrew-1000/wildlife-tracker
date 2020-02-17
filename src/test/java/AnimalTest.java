@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 public class AnimalTest {
     private Sql2o sql2o;
-    Animal testAnimal = new Animal(1, "elephant", "healthy", 17, true);
+    Animal testAnimal = new Animal(1, "elephant", "healthy", "17", "true");
     Sql2oAnimal sql2oAnimal = new Sql2oAnimal(sql2o);
 
     @Rule
@@ -28,19 +28,19 @@ public class AnimalTest {
 
 //    @Test
 //    public void save_insertObjectsIntoDatabase_Animal() {
-//        sql2oAnimal.add(1, "elephant", "healthy", "young", "young");
-//        assertTrue(getAll().get(0).equals(sql2oAnimal));
+//        sql2oAnimal.add(1, "elephant", "healthy", "young", "true");
+//        assertTrue(sql2oAnimal.getAll().get(0).equals(sql2oAnimal));
 //    }
-//
+
 //    @Test
 //    public void all_returnsAllInstancesOfAnimals_true() {
-//        Animal firstAnimal = new Animal(1, "elephant", "healthy", 17, true);
+//        Sql2oAnimal firstAnimal = new Animal(1, "elephant", "healthy", 17, true);
 //        firstAnimal.add();
 //        Animal secondAnimal = new Animal(2, "lion", "ill", 4, false);
 //        secondAnimal.add();
 //        Animal thirdAnimal = new Animal(3, "girraffe", "healthy", 6, true);
 //        thirdAnimal.add();
-//        assertEquals(true, Animal.getAll().get(0).equals(firstAnimal));
+//        assertEquals(true, firstAnimal.getAll().get(0).equals(firstAnimal));
 //        assertEquals(true, Animal.getAll().get(1).equals(secondAnimal));
 //        assertEquals(true, Animal.getAll().get(2).equals(thirdAnimal));
 //    }
